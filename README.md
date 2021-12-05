@@ -12,7 +12,7 @@ print(stem("running"))
 # "run"
 ```
 
-## What dose the python library do?
+## What does the python library do?
 In order to make this wrapper library I took the porter2.go file from Surgebase, made a few small modifications including
 making the stem function accept and return C strings and renaming the package to main.
 I then compiled that file to C, and provided a [small wrapper](https://github.com/kajuberdut/porter2/blob/main/porter2/__init__.py) to call the c version.
