@@ -17,7 +17,7 @@ In order to make this wrapper library I took the porter2.go file from Surgebase,
 making the stem function accept and return C strings and renaming the package to main.
 I then compiled that file to C, and provided a [small wrapper](https://github.com/kajuberdut/porter2/blob/main/porter2/__init__.py) to call the c version.
 
-Becuase the C version of porter2.go is 2.4 MB, I went ahead and compressed it using Python's built in bz2 and the zipper module to unzip it
+Becuase the C version of porter2.go is 2.4 MB, I went ahead and compressed it using Python's built in bz2 and the [zipper module](https://github.com/kajuberdut/porter2/blob/main/porter2/surgebase/zipper.py) to unzip it
 on first use. The bz2 version is about 0.8 MB. As a result of the decompression step, the very first time porter2 is imported it will take a fraction
 of a second longer than future imports.
 
