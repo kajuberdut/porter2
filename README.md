@@ -1,7 +1,6 @@
 # porter2
-A python wrapper around surgebase's porter2 implimentation. 
+A pure python implimentation of the finite state machine found in surgebase's porter2 implimentation. 
 
-The surgebase library impliments a finate state machine and as such has very good performance.
 For more information see [Credits](#credits-and-info)
 
 ## Usage
@@ -13,14 +12,9 @@ print(stem("running"))
 ```
 
 ## What does the python library do?
-In order to make this wrapper library I took the porter2.go file from Surgebase, made a few small modifications including
-making the stem function accept and return C strings and renaming the package to main.
-I then compiled that file to C, and provided a [small wrapper](https://github.com/kajuberdut/porter2/blob/main/porter2/__init__.py) to call the C version.
+This library impliments the same finite state machine logic as surgebase's porter2 implimentation only in pure Python instead of Go. The result is a word stemmer with zero dependencies and (reletively) easy to read/hack code but which still provides excellent performance. Benchmarks will be provided in the future.
 
-Becuase the C version of porter2.go is 2.4 MB, I went ahead and compressed it using Python's built in bz2 and added the [zipper module](https://github.com/kajuberdut/porter2/blob/main/porter2/surgebase/zipper.py) to unzip it
-on first use. The bz2 version is about 0.8 MB. As a result of the decompression step, the very first time porter2 is imported it will take a small amount of time longer than future imports.
-
-## Alternatives for Porter2 in Python
+## Alternatives for Porter2
 * [pystemmer](https://github.com/snowballstem/pystemmer)
 * [A Python version](https://github.com/evandempsey/porter2-stemmer)
 * [Another Python version from Whoosh](https://github.com/mchaput/whoosh/blob/main/src/whoosh/lang/porter2.py)
